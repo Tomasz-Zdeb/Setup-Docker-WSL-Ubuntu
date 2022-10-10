@@ -18,6 +18,8 @@ sudo apt-get upgrade
 sudo apt install --no-install-recommends apt-transport-https ca-certificates curl gnupg2
 ```
 
+Next two commands utilize `ID` and `VERSION_CODENAME` environmental variables. Check if they exist by using: `echo -e "ID:$ID\nVERSION_CODENAME:$VERSION_CODENAME"` command to print them and check if any values are displayed. To get values that correspond to theses variables use: `lsb_release -a | grep Codename` and `lsb_release -a | grep ID` accordingly
+
 ```bash
 curl -fsSL https://download.docker.com/linux/${ID}/gpg | sudo tee /etc/apt/trusted.gpg.d/docker.asc
 ```
@@ -58,4 +60,6 @@ Open or create `.bash_alliases` file in Your home directory and add:
 
 ## References
 
-* [Dev article](https://dev.to/bowmanjd/install-docker-on-windows-wsl-without-docker-desktop-34m9)
+* [Dev article on setting up Docker on WSL](https://dev.to/bowmanjd/install-docker-on-windows-wsl-without-docker-desktop-34m9)
+* [Linuxize article on checking Ubuntu version](https://linuxize.com/post/how-to-check-your-ubuntu-version/)
+* [Linuxhint article on echoing new line](https://linuxhint.com/echo-newline-bash/)
